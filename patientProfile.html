@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>রোগী প্রোফাইল</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body { font-family: "SolaimanLipi", sans-serif; background-color: #7fb0e2; }
+    .card { border-radius: 10px; }
+    .profile-pic { width: 120px; height: 120px; object-fit: cover; border-radius: 50%; }
+    .info-label { font-weight: 500; color: #555; }
+    .info-value { font-weight: bold; }
+    .section-btn { margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="dashboard.html">ড্যাশবোর্ড</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="appointment.html">আজকের অ্যাপয়েন্টমেন্ট</a></li>
+          <li class="nav-item"><a class="nav-link" href="notification.html">নোটিফিকেশন</a></li>
+        </ul>
+        <button class="btn btn-danger">লগআউট</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Patient Profile -->
+  <div class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <div class="row align-items-center">
+              <div class="col-md-2 text-center">
+                <img src="https://via.placeholder.com/120" alt="রোগীর ছবি" class="profile-pic mb-2" />
+                <p class="info-value">জনাব মোঃ হাসান</p>
+              </div>
+              <div class="col-md-10">
+                <div class="row mb-2">
+                  <div class="col-sm-3 info-label">বয়স:</div>
+                  <div class="col-sm-9 info-value">৩৫ বছর</div>
+                </div>
+                <div class="row mb-2">
+                  <div class="col-sm-3 info-label">লিঙ্গ:</div>
+                  <div class="col-sm-9 info-value">পুরুষ</div>
+                </div>
+                <div class="row mb-2">
+                  <div class="col-sm-3 info-label">রক্তের গ্রুপ:</div>
+                  <div class="col-sm-9 info-value">O+</div>
+                </div>
+                <div class="row mb-2">
+                  <div class="col-sm-3 info-label">মোবাইল নম্বর:</div>
+                  <div class="col-sm-9 info-value">০১৭১২৩৪৫৬৭৮</div>
+                </div>
+                <div class="row mb-2">
+                  <div class="col-sm-3 info-label">ঠিকানা:</div>
+                  <div class="col-sm-9 info-value">ঢাকা, বাংলাদেশ</div>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <div class="container my-4">
+                <div class="row justify-content-center">
+                  <div class="col-md-8">
+                    <div class="card shadow-sm">
+                      <div class="card-body">
+                        <h5 class="card-title mb-3 text-center">রোগীর স্বাস্থ্য সংক্রান্ত গুরুত্বপূর্ণ নোট</h5>
+              
+                        <!-- Chronic Diseases Note -->
+                        <div class="mb-3">
+                          <h6 class="fw-bold text-primary">দীর্ঘমেয়াদি রোগ:</h6>
+                          <p class="text-dark">ডায়াবেটিস, উচ্চ রক্তচাপ</p>
+                        </div>
+              
+                        <!-- Allergy Information Note -->
+                        <div class="mb-3">
+                          <h6 class="fw-bold text-danger">অ্যালার্জি:</h6>
+                          <p class="text-dark">পেনিসিলিন, ধূলাবালি</p>
+                        </div>
+                        <div class="container my-5 bg-info">
+                            <div class="row justify-content-center">
+                          
+                              <!-- Chronic Disease Note -->
+                              <div class="col-md-5 mb-4 ">
+                                <div class="card shadow-sm">
+                                  <div class="card-body">
+                                    <h5 class="text-primary fw-bold">🩺 দীর্ঘমেয়াদি রোগ</h5>
+                                    <form>
+                                      <div class="mb-3">
+                                        <label for="chronicNote" class="form-label">রোগের নাম লিখুন</label>
+                                        <textarea class="form-control" id="chronicNote" rows="3"></textarea>
+                                      </div>
+                                      <button type="submit" class="btn btn-outline-primary">সংরক্ষণ করুন</button>
+                                    </form>
+                                  </div>
+                                </div>
+                              </div>
+                          
+                              <!-- Allergy Note -->
+                              <div class="col-md-5 mb-4">
+                                <div class="card shadow-sm">
+                                  <div class="card-body">
+                                    <h5 class="text-danger fw-bold">🌿 অ্যালার্জি তথ্য</h5>
+                                    <form>
+                                      <div class="mb-3">
+                                        <label for="allergyNote" class="form-label">অ্যালার্জির নাম লিখুন</label>
+                                        <textarea class="form-control" id="allergyNote" rows="3"></textarea>
+                                      </div>
+                                      <button type="submit" class="btn btn-outline-danger">সংরক্ষণ করুন</button>
+                                    </form>
+                                  </div>
+                                </div>
+                              </div>
+                          
+                            </div>
+                          </div>
+                          
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            <div class="d-flex flex-wrap">
+              <a href="patienthistory.html" class="btn btn-info section-btn flex-grow-1 me-2">রোগীর ইতিহাস</a>
+              <a href="prescription.html" class="btn btn-info section-btn flex-grow-1">প্রেসক্রিপশন লিখুন</a>
+              <!-- AI Button -->
+              <div class="text-center my-4">
+                <a href="AI.html" class="btn btn-success btn-lg">
+                  <i class="fas fa-robot me-2"></i> AI প্রেসক্রিপশন সাজেশন
+                </a>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

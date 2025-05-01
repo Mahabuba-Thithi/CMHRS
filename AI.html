@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI প্রেসক্রিপশন সাজেশন</title>
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    body {
+      
+        background-color: #7fb0e2;
+    }
+    #suggestions {
+      background-color: #e9f7ef;
+      border-left: 5px solid #28a745;
+      padding: 15px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="dashboard.html">ড্যাশবোর্ড</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          
+          <li class="nav-item">
+            <a class="nav-link" href="patienthistory.html">রোগীর ইতিহাস</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="appointment.html">আজকের অ্যাপয়েন্টমেন্ট</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="notification.html">নোটিফিকেশন</a>
+          </li>
+        </ul>
+        <button class="btn btn-danger">লগআউট</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-5 ">
+    <h2 class="text-center mb-4">AI প্রেসক্রিপশন সাজেশন</h2>
+    <form id="prescriptionForm">
+      <div class="mb-3">
+        <label for="symptoms" class="form-label">উপসর্গ লিখুন:</label>
+        <textarea
+          class="form-control"
+          id="symptoms"
+          rows="4"
+          placeholder="যেমন: জ্বর, কাশি, মাথাব্যথা"
+        ></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">সাজেশন দেখুন</button>
+    </form>
+    <div id="suggestions" class="mt-4"></div>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document
+      .getElementById('prescriptionForm')
+      .addEventListener('submit', function (e) {
+        e.preventDefault();
+        const symptoms = document.getElementById('symptoms').value.trim();
+
+        if (symptoms === '') {
+          alert('অনুগ্রহ করে উপসর্গ লিখুন।');
+          return;
+        }
+
+        const suggestions = generateSuggestions(symptoms);
+        displaySuggestions(suggestions);
+      });
+
+    function generateSuggestions(symptoms) {
+      const lowerSymptoms = symptoms.toLowerCase();
+      const suggestions = [];
+
+      // Fever
+      if (lowerSymptoms.includes('জ্বর')) {
+        suggestions.push(
+          'প্যারাসিটামল ৫০০মিগ্রা - প্রতি ৬ ঘণ্টায় ১টি ট্যাবলেট'
+        );
+      }
+      // Cough
+      if (lowerSymptoms.includes('কাশি')) {
+        suggestions.push('কাশির সিরাপ - দিনে ২ বার ১০মিলি');
+      }
+      // Headache
+      if (lowerSymptoms.includes('মাথাব্যথা')) {
+        suggestions.push(
+          'আইবুপ্রোফেন ৪০০মিগ্রা - প্রতি ৮ ঘণ্টায় ১টি ট্যাবলেট'
+        );
+      }
+      // Diabetes
+      if (lowerSymptoms.includes('ডায়াবেটিস')) {
+        suggestions.push(
+          'মেটফর্মিন ৫০০মিগ্রা - দিনে ২ বার ১টি ট্যাবলেট'
+        );
+      }
+      // Hypertension (High Blood Pressure)
+      if (lowerSymptoms.includes('রক্তচাপ')) {
+        suggestions.push(
+          'অ্যামলডিপিন ৫মিগ্রা - দিনে ১টি ট্যাবলেট'
+        );
+      }
+      // Cold
+      if (lowerSymptoms.includes('ঠাণ্ডা')) {
+        suggestions.push(
+          'ডেক্সট্রোমেথরফান কাশি সিরাপ - ১০ মিলি, দিনে ৩ বার'
+        );
+      }
+      // Stomach Ache
+      if (lowerSymptoms.includes('পেটব্যথা')) {
+        suggestions.push(
+          'প্যারাসিটামল ৫০০মিগ্রা - প্রতি ৬ ঘণ্টায় ১টি ট্যাবলেট'
+        );
+      }
+      // Allergy
+      if (lowerSymptoms.includes('অ্যালার্জি')) {
+        suggestions.push(
+          'লরাটাডিন ১০মিগ্রা - দিনে ১টি ট্যাবলেট'
+        );
+      }
+
+      // Default message if no suggestions found
+      if (suggestions.length === 0) {
+        suggestions.push(
+          'কোনো নির্দিষ্ট সাজেশন পাওয়া যায়নি। রোগীর এ ধরনের কোনো রোগ নেই।'
+        );
+      }
+
+      return suggestions;
+    }
+
+    function displaySuggestions(suggestions) {
+      const suggestionsDiv = document.getElementById('suggestions');
+      suggestionsDiv.innerHTML =
+        '<h5>সাজেস্টেড ওষুধসমূহ:</h5><ul>' +
+        suggestions.map((s) => `<li>${s}</li>`).join('') +
+        '</ul>';
+    }
+  </script>
+</body>
+</html>

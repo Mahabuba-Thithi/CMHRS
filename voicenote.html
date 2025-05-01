@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ভয়েস নোট আপলোড</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      background-color: #7fb0e2;
+      font-family: "SolaimanLipi", sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="dashboard.html">ড্যাশবোর্ড</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="appointment.html">আজকের অ্যাপয়েন্টমেন্ট</a></li>
+          <li class="nav-item"><a class="nav-link" href="notification.html"><i class="fas fa-bell"></i></a></li>
+        </ul>
+        <button class="btn btn-danger">লগআউট</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Voice Notes Upload -->
+  <div class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title mb-4 text-center">ভয়েস নোট যুক্ত করুন</h5>
+            <form action="#" method="POST" enctype="multipart/form-data">
+              <div class="mb-3">
+                <label for="voiceNote" class="form-label">অডিও ফাইল নির্বাচন করুন</label>
+                <input class="form-control" type="file" id="voiceNote" name="voiceNote" accept="audio/*" required>
+              </div>
+              <div class="text-end">
+                <button type="submit" class="btn btn-primary">
+                  <i class="fas fa-upload me-2"></i> আপলোড করুন
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mt-4 text-center">
+    <a href="prescription.html" class="btn btn-success btn-lg">প্রেসক্রিপশন লেখো</a>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

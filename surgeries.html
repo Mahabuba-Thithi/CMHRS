@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>সার্জারি ইতিহাস</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: "SolaimanLipi", sans-serif;
+      background-color: #7fb0e2;
+    }
+    .card {
+      border-radius: 10px;
+    }
+    .card-body {
+      padding: 1.5rem;
+    }
+    table th, table td {
+      vertical-align: middle;
+    }
+    .surgeon-cell {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .details-btn {
+      padding: 2px 6px;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="dashboard.html">ড্যাশবোর্ড</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="patienthistory.html">রোগীর ইতিহাস</a></li>
+          <li class="nav-item"><a class="nav-link" href="appointment.html">আজকের অ্যাপয়েন্টমেন্ট</a></li>
+          <li class="nav-item"><a class="nav-link" href="notification.html">নোটিফিকেশন</a></li>
+        </ul>
+        <button class="btn btn-danger">লগআউট</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Surgeries Page -->
+  <div class="container my-5">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h4 class="card-title mb-4 text-center">সার্জারি ইতিহাস</h4>
+        <div class="table-responsive">
+          <table class="table table-hover align-middle">
+            <thead class="table-light">
+              <tr>
+                <th scope="col">তারিখ</th>
+                <th scope="col">সার্জারি ধরন</th>
+                <th scope="col">সার্জন</th>
+                <th scope="col">হাসপাতাল</th>
+                <th scope="col">অ্যাকশন</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>২০ ফেব্রুয়ারি, ২০২৫</td>
+                <td>কেন্দ্রীয় অ্যাপেনডিসাইটিস</td>
+                <td>
+                  <div class="surgeon-cell">
+                    ডাঃ হাসান আলী
+                    <button class="btn btn-sm btn-info details-btn">বিস্তারিত</button>
+                  </div>
+                </td>
+                <td>গ্রামীণ সুস্থিতি হাসপাতাল</td>
+                <td><button class="btn btn-sm btn-outline-primary">দেখুন</button></td>
+              </tr>
+              <tr>
+                <td>১২ জানুয়ারি, ২০২৫</td>
+                <td>হার্ট বাইপাস সার্জারি</td>
+                <td>
+                  <div class="surgeon-cell">
+                    ডাঃ রাশেদা খানম
+                    <button class="btn btn-sm btn-info details-btn">বিস্তারিত</button>
+                  </div>
+                </td>
+                <td>হৃদয় কেয়ার ল্যাব</td>
+                <td><button class="btn btn-sm btn-outline-primary">দেখুন</button></td>
+              </tr>
+              <!-- আরও সার্জারি রেকর্ড যুক্ত করুন -->
+            </tbody>
+          </table>
+        </div>
+        <p class="text-center text-muted mt-3">সব সার্জারি রেকর্ড তালিকাভুক্ত করা হয়েছে</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
